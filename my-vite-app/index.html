@@ -2,7 +2,9 @@
 <input id="aiChatbotCode" type="text">
 <script type="module">
 
-    import Chatbot from './chatbot.js';
+    console.log(import.meta.env);  // Debugging: Check the entire environment object
+
+    import Chatbot from './src/chatbot.js';
 
     const input = document.getElementById('aiChatbotCode');
     input.addEventListener('input', async () => {
