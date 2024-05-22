@@ -1,1 +1,9 @@
-<div>ok</div>
+<label for="aiChatbotCode">AI Chatbot Code</label>
+<input id="aiChatbotCode" type="text">
+    
+<script>
+  const input = document.getElementById('aiChatbotCode');
+  input.addEventListener('change', async () => {
+    console.log(input.value);
+  });
+</script>
