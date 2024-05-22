@@ -1253,33 +1253,83 @@
     
     const input = document.getElementById('aiChatbotCode');
     input.addEventListener('input', async () => {
-
+        
         // capture value (expecting openai assistant_id)
         const assistant_id = input.value;
-
+    
         // store of branding info
         const brands = {
-            [assistant_id]: {
-            },
-
-        }
-
-        // check if assistant_id is stored
-        
-
-        // pulling the config from 'brands', just adding the assistant_id
-        let config = brands[assistant_id];
-        config = {
-            ...config
-            bot: {
-                ...config.bot,
-                assistant_id,
+                "asst_MEP46ULcSBGVaFeUv70Rvp28": {
+              "brand": {
+                "name": "Jake Labate, SEO Consultant",
+                "slogan": "AI Chatbot for Jake Labate, SEO Consultant",
+                "iconSrc": "https://assets-global.website-files.com/6493291d928ec2e64d10635c/6554e27505b29595a06ea9f4_unnamed.png",
+                "font": "Montserrat, sans-serif",
+                "colors": {
+                  "primaryDark": "#000000",
+                  "primaryLight": "#ffffff"
+                }
+              },
+              "agency": {
+                "branded": true,
+                "code": "hooray-agency",
+                "name": "Hooray Agency",
+                "url": "https://hooray.agency",
+                "iconSrc": "https://www.hooray.agency/images/favicon.ico"
+              },
+              "bot": {
+                "name": "Jake Bot",
+                "personalities": "warm",
+                "iconSrc": "https://assets-global.website-files.com/6493291d928ec2e64d10635c/6554e27505b29595a06ea9f4_unnamed.png",
+                "location": "bottom-right",
+                "notice": {
+                  "message": "Hi, I'm Jake Bot."
+                },
+                "disclaimer": true,
+                "widget": {
+                  "input": {
+                    "placeholder": "Ask me anything!"
+                  }
+                },
+                "welcomeMessages": {
+                  "default": "Hello, my name is Jake Bot, an AI-powerd chatbot for Jake Labate, SEO Consultant. I am here to answer any questions you may have! How can I help you today?"
+                },
+                "suggestions": {
+                  "default": [
+                    "What are your hourssssss?",
+                    "What are your services?",
+                    "What are your prices?"
+                  ],
+                  "/": [],
+                  "/amenities": []
+                }
+              },
+              "kb": {
+                "kb": false
+              }
             }
+        };
+    
+        // check if assistant_id is stored
+        if (brands.hasOwnProperty(assistant_id)) {
+            
+            // pulling the config from 'brands', just adding the assistant_id
+            let config = brands[assistant_id];
+            config = {
+                ...config,
+                bot: {
+                    ...config.bot,
+                    assistant_id,
+                }
+            };
+    
+            // deploy chatbot UI
+            const chatbot = new Chatbot(config);
+            await chatbot.init();
+            
+        } else {
+            console.log('AI Chatbot Code not recognized');
         }
-
-        // deploy chatbot UI
-        const chatbot = new Chatbot(config);
-        await chatbot.init();
-
     });
+
 </script>
