@@ -13,7 +13,7 @@ export default class Chatbot {
         // todo: should the assistant_id be hidden in addition to the api key?
         this.thread_id = null; // will be set after the first user message
         // Any file in your project
-        this.apiKey = '';
+        this.apiKey = import.meta.env.VITE_OPENAI_API_KEY;
         // todo: figure out some way to hide the api key
         this.openai_headers = {
             'Content-Type': 'application/json',
