@@ -2,9 +2,10 @@
 <input id="aiChatbotCode" type="text">
 <script type="module">
 
+    const apiKey = import.meta.env.VITE_OPENAI_API_KEY;
+    console.log(apiKey);
+
     import Chatbot from './chatbot.js';
-
-
 
     const input = document.getElementById('aiChatbotCode');
     input.addEventListener('input', async () => {

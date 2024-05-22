@@ -1,7 +1,3 @@
-// process env
-import * as dotenv from 'dotenv';
-dotenv.config();
-
 export default class Chatbot {
     constructor(config) {
 
@@ -16,7 +12,8 @@ export default class Chatbot {
         this.assistant_id = this.config.bot['assistant_id'];
         // todo: should the assistant_id be hidden in addition to the api key?
         this.thread_id = null; // will be set after the first user message
-        this.apiKey = process.env.OPENAI_API_KEY;
+        // Any file in your project
+        this.apiKey = '';
         // todo: figure out some way to hide the api key
         this.openai_headers = {
             'Content-Type': 'application/json',

@@ -1,8 +1,9 @@
 {
+  "type": "module",
   "name": "hooray-ai-chatbot-demo",
   "version": "1.0.0",
   "description": "",
-  "main": "chatbot.js",
+  "main": "my-vite-app/chatbot.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -12,6 +13,7 @@
   },
   "private": true,
   "dependencies": {
-    "dotenv": "^16.4.5"
+    "dotenv": "^16.4.5",
+    "vite": "^5.2.11"
   }
 }
